@@ -22,49 +22,51 @@ console.log(cliente)
 
 if (edad >= 18) {
     alert ("Que deseas Comprar?")
-} else { edad < 18
+}else {
     alert("Edad no apta para Comprar")
 }
 
 class Licores{
-    constructor(nombre, proveedor, precio){
+    constructor(nombre, proveedor, precio, id){
         this.nombre = nombre
         this.proveedor = proveedor
         this.precio = precio
+        this.id = id
     }
     
 }
 
 const licores = []
 
-licores.push(new Licores("Ron", "Crm",1500))
-licores.push(new Licores("Whisky", "Metropolitan",15500))
-licores.push(new Licores("Ginebra","Marfran",11500))
-licores.push(new Licores("Tequila","Nube Azul",12200))
-licores.push(new Licores("Vodka","Alnova",1500))
+licores.push(new Licores("Ron", "Crm",1500,1))
+licores.push(new Licores("Whisky", "Metropolitan",15500,2))
+licores.push(new Licores("Ginebra","Marfran",11500,3))
+licores.push(new Licores("Tequila","Nube Azul",12200,4))
+licores.push(new Licores("Vodka","Alnova",1500,5))
 
 class Accesorios{
-    constructor(nombre, proveedor, precio){
+    constructor(nombre, proveedor, precio, id){
     this.nombre = nombre
     this.proveedor = proveedor
     this.precio = precio
+    this.id = id
     }
 }
 
 const accesorios = []
 
-accesorios.push(new Accesorios("Escarchador", "Soyfer",11500))
-accesorios.push(new Accesorios("Vasos", "Lavanim",12500))
-accesorios.push(new Accesorios("Esterilla", "StarHouse",5500))
-accesorios.push(new Accesorios("Copas", "Lavanim",9500))
-accesorios.push(new Accesorios("Mortero", "Barak",1500))
+accesorios.push(new Accesorios("Escarchador", "Soyfer",11500,1))
+accesorios.push(new Accesorios("Vasos", "Lavanim",12500,2))
+accesorios.push(new Accesorios("Esterilla", "StarHouse",5500,3))
+accesorios.push(new Accesorios("Copas", "Lavanim",9500,4))
+accesorios.push(new Accesorios("Mortero", "Barak",1500,5))
 
 
 // funciones
-const buscarObjeto = (array, busqueda) => {return array.find(articulo => articulo === busqueda)}
-const sumarCompras = (n1, n2,) => {return resultado = n1 + n2 }
-const sumarIva = (n1) => {return resultado = n1 * 1.21}
-const descuentoEfectivo = (n1 => {return resultado = n1 - (n1 *0.1)})
+let sumarCompras = (n1, n2,) => {return resultado = n1 + n2 }
+let sumarIva = (n1) => {return resultado = n1 * 1.21}
+let descuentoEfectivo = (n1 => {return resultado = n1 - (n1 *0.1)})
+
 
 // nuestra variedad de Licores
 
@@ -73,40 +75,39 @@ alert(" Aca te dejamos lista de nuestros Licores")
 // lista de productos
 
 licores.forEach(element => {
-    alert(`Lista de Licores:  ${element.nombre},  Proveedor: ${element.proveedor}, Precio: ${element.precio}` )
+    alert(` id: ${element.id}  ${element.nombre},  Proveedor: ${element.proveedor}, Precio: ${element.precio} ` )
 }
     )
 
-    let elegirLicores = prompt("indique el nombre del licor que desea").toLocaleLowerCase
-    let compraLicores
+    let elegirLicores = prompt("indique el ID del licor que desea")
     let nombreLicores
 
     switch (elegirLicores) {
-        case "Ron":
+        case "1":
             let compra = licores[0]
             compraLicores = compra.precio
             nombreLicores = compra.nombre
             break;
 
-            case "Whisky":
+            case "2":
                 let compra1 = licores[1]
                 compraLicores = compra1.precio
                 nombreLicores = compra1.nombre
                 break;
 
-            case "Ginebra":
+            case "3":
                 let compra2 = licores[2]
                 compraLicores = compra2.precio
                 nombreLicores = compra2.nombre
             break; 
 
-            case "Tequila":
+            case "4":
                 let compra3 = licores[3]
                 compraLicores = compra3.precio
                 nombreLicores = compra3.nombre
             break;  
 
-         case "Vodka":
+         case "5":
          let compra4 = licores[4]
          compraLicores = compra4.precio
          nombreLicores = compra4.nombre
@@ -122,40 +123,40 @@ console.log(compraLicores)
 alert("Aca tienes nuestra lista de Accesorios")
 
 accesorios.forEach(element => {
-    alert(`Lista de Accesorios:  ${element.nombre},  Proveedor: ${element.proveedor}, Precio: ${element.precio}` )
+    alert(` Id: ${element.id}, ${element.nombre},  Proveedor: ${element.proveedor}, Precio: ${element.precio}` )
 }
     )
 
-    let elegirAccesorios = prompt("indique el nombre del Accesorio que desea").toLocaleLowerCase
+    let elegirAccesorios = prompt("indique el id del Accesorio que desea")
     let compraAccesorios
     let nombreAccesorios
 
     switch (elegirAccesorios) {
-        case "Escarchador":
+        case "1":
             let compra = accesorios[0]
             compraAccesorios = compra.precio
             nombreAccesorios = compra.nombre
             break;
 
-            case "Vasos":
+            case "2":
                 let compra1 =  accesorios[1]
                 compraAccesorios = compra1.precio
                 nombreAccesorios = compra1.nombre
                 break;
 
-            case "Esterilla":
+            case "3":
                 let compra2 =  accesorios[2]
                 compraAccesorios = compra2.precio
                 nombreAccesorios = compra2.nombre
             break; 
 
-            case "Copas":
+            case "4":
                 let compra3 =  accesorios[3]
                 compraAccesorios = compra3.precio
                 nombreAccesorios = compra3.nombre
             break;  
 
-         case "Mortero":
+         case "5":
          let compra4 =  accesorios[4]
          compraAccesorios = compra4.precio
          nombreAccesorios = compra4.nombre
@@ -182,12 +183,13 @@ alert(`Tu Compra con IVA incluido total $ ${compraConIva}.`)
 alert("Tienes 10% pagando en efectivo")
 let metodoDePago = prompt("Abonas en efectivo?")
 let precioFinal
-  
+  console.log(metodoDePago)
 if (metodoDePago == "efectivo") {
+    console.log(metodoDePago)
     precioFinal = descuentoEfectivo(compraConIva)
     alert(`El precio final es $${precioFinal}`)
 } else (metodoDePago != "efectivo" )
-    alert("No tienes descuento")
+    alert("tu precio final es " + compraConIva )
 
     alert("Gracias por tu compra")
 
